@@ -109,3 +109,32 @@
 		
 	2、Layout布局过程
      套路和我们Measure类似
+     
+     
+====================华丽丽的分割线============================
+
+Paint画笔的基本使用
+1、Paint画笔画图形、路径
+2、Paint画笔来画文字
+	Paint.FontMetrics
+	Paint.FontMetricsInt
+	里面有top，ascent，desent, bottom, leading这几个属性
+	
+	top = top线的y坐标 - baseline线的y坐标
+	bottom = bottom线的y坐标 - baseline线的y坐标
+	ascent = ascent线的y坐标 - baseline线的y坐标
+	desent = desent线的y坐标 - baseline线的y坐标
+	
+	1、A = B = （bottom - top）/2
+	bottom = baseline + FontMetrics.bottom
+	top = baseline + FontMetrics.top
+
+	---> A = B = (FontMetrics.bottom - FontMetrics.top)/ 2
+
+	2、C =  B - （bottom - baseline）  =  B - FontMetrics.bottom
+
+	3、C = baseline - center
+		
+	综上可得
+	baseline - center = （FontMetrics.bottom - FontMetrics.top）/2 - FontMetrics.bottom
+	baseline = center +（FontMetrics.bottom - FontMetrics.top）/2 - FontMetrics.bottom

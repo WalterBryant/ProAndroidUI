@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/orderStatus_tabGroup"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/allOrder_tab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:text="全部"/>
+
+        <RadioButton
+            android:id="@+id/pendingPaymentOrder_tab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:text="待付款" />
+
+        <RadioButton
+            android:id="@+id/pendingReceivingOrder_tab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:text="待收货" />
+
+        <RadioButton
+            android:id="@+id/rderFollowUp_tab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:text="退款/售后"/>
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/order_viewpage_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:scaleType="matrix" />
+
+    <com.w.proandroid.ui.fragmentsinfragment.viewpager.NoScrollViewPager
+        android:id="@+id/myOrder_viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null" />
+</LinearLayout>

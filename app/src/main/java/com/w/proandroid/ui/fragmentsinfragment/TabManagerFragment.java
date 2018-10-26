@@ -1,6 +1,12 @@
 package com.w.proandroid.ui.fragmentsinfragment;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -14,6 +20,7 @@ import android.widget.RadioGroup;
 import com.w.proandroid.R;
 import com.w.proandroid.ui.fragmentsinfragment.adapter.FragmentAdapter;
 import com.w.proandroid.ui.fragmentsinfragment.viewpager.NoScrollViewPager;
+import com.w.proandroid.utils.DisplayMetricsTools;
 import com.w.proandroid.utils.Utils;
 
 import java.util.ArrayList;
@@ -70,14 +77,6 @@ public class TabManagerFragment extends Fragment {
         mOrderStatusViewpage.addOnPageChangeListener(mOnPageChangeListener);
         setIndicatorImgBitmap();
         initFragment(getActivity().getIntent().getIntExtra("tabIndex", -1));//可以从我的页面 直接跳转到相对应订单状态的列表
-    }
-
-    private void initFragment(int tabIndex) {
-
-    }
-
-    private void setIndicatorImgBitmap() {
-
     }
 
     ViewPager.OnPageChangeListener mOnPageChangeListener = new ViewPager.OnPageChangeListener() {
@@ -137,4 +136,44 @@ public class TabManagerFragment extends Fragment {
         }
     };
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    private void setIndicatorImgBitmap() {
+        try {
+            int imgWidth = DisplayMetricsTools.dip2px(65);
+            int imgHeight = DisplayMetricsTools.dip2px(2);
+            Bitmap bitmap = Bitmap.createBitmap(imgWidth, imgHeight, Bitmap.Config.ARGB_8888);
+            mViewPageIndicator.setImageBitmap(createRoundConerImage(bitmap));
+            mViewPageIndicator.setPadding((mTagLineWidth - imgWidth) / 2, 0, (mTagLineWidth - imgWidth) / 2, 0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Bitmap createRoundConerImage(Bitmap source) {
+        final Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setColor(getResources().getColor(R.color.colorAccent));
+        Canvas canvas = new Canvas(source);
+        RectF rect = new RectF(0, 0, source.getWidth(), source.getHeight());
+        canvas.drawRoundRect(rect, 10, 10, paint);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawBitmap(source, 0, 0, paint);
+        return source;
+    }
+
+    private void initFragment(int tabIndex) {
+        if (tabIndex != -1) {
+            mOrderStatusViewpage.setCurrentItem(tabIndex, true);
+            if (tabIndex == 0) {
+                mOnPageChangeListener.onPageSelected(0);
+            }
+        } else {
+
+        }
+    }
 }

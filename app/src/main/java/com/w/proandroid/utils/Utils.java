@@ -15,4 +15,5 @@ public class Utils {
      * 屏幕高
      */
     public static int mHeightPixels = 0;
+
 }

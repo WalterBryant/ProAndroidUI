@@ -6,74 +6,62 @@
 
     <com.w.proandroid.ui.FlowLayout
         android:id="@+id/flowlayout"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
             style="@style/text_flag_01"
-            android:text="hello" />
+            android:text="@string/hello" />
 
         <TextView
             style="@style/text_flag_01"
-            android:text="hello,hi" />
+            android:text="@string/hello_hi" />
 
         <TextView
             style="@style/text_flag_01"
-            android:text="你是我的"
+            android:text="@string/youaremine"
+            android:textSize="18sp" />
+
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="@string/hello" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="@string/hello_hi" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="@string/youaremine"
             android:textSize="18sp" />
 
         <TextView
             style="@style/text_flag_01"
-            android:text="hello,man" />
+            android:text="@string/hello" />
 
         <TextView
             style="@style/text_flag_01"
-            android:text="helloview" />
+            android:text="@string/hello_hi" />
 
         <TextView
             style="@style/text_flag_01"
-            android:text="view" />
+            android:text="@string/youaremine"
+            android:textSize="18sp" />
 
         <TextView
             style="@style/text_flag_01"
-            android:text="我是你的"
-            android:textSize="20sp" />
+            android:text="@string/hello" />
 
         <TextView
             style="@style/text_flag_01"
-            android:text="he" />
+            android:text="@string/hello_hi" />
 
         <TextView
             style="@style/text_flag_01"
-            android:text="hello" />
+            android:text="@string/youaremine"
+            android:textSize="18sp" />
 
-        <TextView
-            style="@style/text_flag_01"
-            android:text="textview" />
-
-        <TextView
-            style="@style/text_flag_01"
-            android:text="view" />
-
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hello,view" />
-
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hello,mt" />
-
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hel" />
-
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hel" />
-
-        <TextView
-            style="@style/text_flag_01"
-            android:text="hel2" />
 
     </com.w.proandroid.ui.FlowLayout>
 

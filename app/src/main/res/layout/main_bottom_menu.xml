@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bottom_height">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@+id/main_menu_lay"
+        android:background="@color/common_line_gray" />
+
+    <LinearLayout
+        android:id="@+id/main_menu_lay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/main_bottom_menu_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/main_homepage_linear"
+            style="@style/main_bottom_bar_linear">
+
+            <com.w.proandroid.ui.PortionImageView
+                android:id="@+id/main_homepage_img"
+                style="@style/main_bottom_bar_linear"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

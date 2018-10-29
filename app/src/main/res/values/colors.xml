@@ -3,4 +3,16 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="common_line_gray">#f1f1f1</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- 底部菜单背景颜色 -->
+    <color name="main_bottom_menu_bg">#FFFFFF</color>
+    <color name="main_bottom_text_color">#999999</color>
+    <color name="main_bottom_select_color">#999999</color>
+    <!-- 顶部菜单背景颜色 -->
+    <color name="main_head_bg">#ffd600</color>
+    <color name="main_head_text">#40454b</color>
+
 </resources>

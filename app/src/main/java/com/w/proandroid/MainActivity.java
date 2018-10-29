@@ -1,12 +1,20 @@
 package com.w.proandroid;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import com.w.proandroid.ui.BaseActivity;
+
+public class MainActivity extends BaseActivity implements View.OnClickListener{
+
+    public enum MainMenu {
+        HomePage,
+        Category,
+        ShoppigCart,
+        MinePage;
+    }
 
     private Button flowButton;
     private Button minionButton;

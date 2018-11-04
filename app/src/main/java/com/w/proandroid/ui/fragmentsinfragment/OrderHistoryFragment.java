@@ -50,7 +50,8 @@ public class OrderHistoryFragment extends Fragment {
     }
 
     private void initView(View view) {
-
+        swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_layout);
+        mRecyclerView = view.findViewById(R.id.order_list_recycler);
     }
 
     private void initData() {
@@ -61,6 +62,16 @@ public class OrderHistoryFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(mAdapter);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+            }
+        });
+
+        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorAccent), getResources().getColor(R.color.colorPrimary));
+
 
     }
 

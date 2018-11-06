@@ -22,9 +22,56 @@
             android:id="@+id/main_homepage_linear"
             style="@style/main_bottom_bar_linear">
 
-            <com.w.proandroid.ui.PortionImageView
+            <com.w.proandroid.ui.view.PortionImageView
                 android:id="@+id/main_homepage_img"
-                style="@style/main_bottom_bar_linear"/>
+                style="@style/main_bottom_bar_linear" />
+
+            <TextView
+                android:id="@+id/main_homepage_text"
+                style="@style/main_bottom_bar_text"
+                android:text="@string/main_homepage_title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_categry_linear"
+            style="@style/main_bottom_bar_linear">
+
+            <com.w.proandroid.ui.view.PortionImageView
+                android:id="@+id/main_categry_img"
+                style="@style/main_bottom_bar_linear" />
+
+            <TextView
+                android:id="@+id/main_categry_text"
+                style="@style/main_bottom_bar_text"
+                android:text="@string/main_categry_title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_cart_linear"
+            style="@style/main_bottom_bar_linear">
+
+            <com.w.proandroid.ui.view.PortionImageView
+                android:id="@+id/main_cart_img"
+                style="@style/main_bottom_bar_linear" />
+
+            <TextView
+                android:id="@+id/main_cart_text"
+                style="@style/main_bottom_bar_text"
+                android:text="@string/main_cart_title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_my_linear"
+            style="@style/main_bottom_bar_linear">
+
+            <com.w.proandroid.ui.view.PortionImageView
+                android:id="@+id/main_my_img"
+                style="@style/main_bottom_bar_linear" />
+
+            <TextView
+                android:id="@+id/main_my_text"
+                style="@style/main_bottom_bar_text"
+                android:text="@string/main_my_title" />
         </LinearLayout>
     </LinearLayout>
 

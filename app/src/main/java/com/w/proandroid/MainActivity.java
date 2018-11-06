@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.w.proandroid.ui.BaseActivity;
+import com.w.proandroid.ui.main.MainBottonView;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
@@ -16,8 +17,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         MinePage;
     }
 
-    private Button flowButton;
-    private Button minionButton;
+    private MainBottonView mBottonView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,26 +29,37 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     }
 
     private void initView() {
-        flowButton = findViewById(R.id.flowlayout_button);
-        minionButton = findViewById(R.id.minion_button);
+        mBottonView = findViewById(R.id.main_bottom);
+        mBottonView.setClickTabCallbackListener(new MainBottonView.MainBottomClickTabCallbackListener() {
+            @Override
+            public void onClickTab(int var1) {
+//                MainMenu menu = MainMenu
+            }
+        });
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setTabSelection(MainMenu.HomePage);
+    }
+
+    public void setTabSelection(MainMenu menu) {
+
     }
 
     private void initData() {
-        flowButton.setOnClickListener(this);
-        minionButton.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.flowlayout_button://流布局
-                toFlowActivity();
-                break;
-            case R.id.minion_button://小黄人
-                toMinionActivity();
-                break;
+
         }
     }
+
+
 
     private void toFlowActivity() {
         Intent intent = new Intent(this, FlowActivity.class);

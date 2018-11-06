@@ -1,4 +1,4 @@
-package com.w.proandroid.ui;
+package com.w.proandroid.ui.view;
 
 import android.content.Context;
 import android.graphics.Bitmap;

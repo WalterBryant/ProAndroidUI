@@ -6,4 +6,10 @@
     <string name="hello">hello</string>
     <string name="hello_hi">hello,hi</string>
     <string name="youaremine">你是我的</string>
+
+    <!-- main 主框架 -->
+    <string name="main_homepage_title">首页</string>
+    <string name="main_categry_title">分类</string>
+    <string name="main_cart_title">购物车</string>
+    <string name="main_my_title">我的</string>
 </resources>

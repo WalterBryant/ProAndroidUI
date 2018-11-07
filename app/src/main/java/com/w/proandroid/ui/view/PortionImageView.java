@@ -30,14 +30,4 @@ public class PortionImageView extends AppCompatImageView {
             canvas.drawBitmap(showPic, startX, startY, null);
         }
     }
-
-    public void setBitmapShow(Bitmap b, int x, int y) {
-        if (b == null)
-            return;
-
-        showPic = b;
-        startX = x;
-        startY = y;
-        postInvalidate();
-    }
 }

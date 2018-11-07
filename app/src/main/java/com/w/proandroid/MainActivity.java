@@ -2,9 +2,12 @@ package com.w.proandroid;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.Button;
 
+import com.w.proandroid.common.utils.EnumDigest;
 import com.w.proandroid.ui.BaseActivity;
 import com.w.proandroid.ui.main.MainBottonView;
 
@@ -15,6 +18,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         Category,
         ShoppigCart,
         MinePage;
+
+        public static EnumDigest<MainMenu, Integer> DIGEST = new EnumDigest<MainMenu, Integer>(MainMenu.values(), null) {
+            @Override
+            protected Integer getKey(MainMenu value) {
+                return value.ordinal();
+            }
+        };
     }
 
     private MainBottonView mBottonView;
@@ -26,6 +36,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         setContentView(R.layout.activity_main);
         initView();
         initData();
+
+        setTabSelection(MainMenu.HomePage);
     }
 
     private void initView() {
@@ -33,7 +45,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         mBottonView.setClickTabCallbackListener(new MainBottonView.MainBottomClickTabCallbackListener() {
             @Override
             public void onClickTab(int var1) {
-//                MainMenu menu = MainMenu
+                MainMenu menu = MainMenu.DIGEST.from(var1);
+                setTabSelection(menu);
             }
         });
     }
@@ -45,7 +58,66 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     }
 
     public void setTabSelection(MainMenu menu) {
+        if (menu == null)
+            return;
+        mBottonView.refreshUI(menu.ordinal());
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        hideFragments(transaction);
+        Fragment fragment = findFragmentByMenu(menu);
+        if (fragment == null) {
+            fragment = mMainManager.get(menu);
+            transaction.replace(R.id.main_fragment, fragment, menu.toString());
+        } else {
+            transaction.show(fragment);
+        }
+        transaction.commitAllowingStateLoss();
+    }
 
+    private void hideFragments(FragmentTransaction transaction) {
+        for (MainMenu menu : MainMenu.values()) {
+            Fragment fragment = findFragmentByMenu(menu);
+            if (fragment != null) {
+                transaction.remove(fragment);
+            }
+        }
+    }
+
+    private Fragment findFragmentByMenu(MainMenu menu) {
+        return getSupportFragmentManager().findFragmentByTag(menu.toString());
+    }
+
+    private static MainMenu mMainMenuOnResume;
+
+    private void handleResumeMenu() {
+        if (mMainMenuOnResume != null) {
+            setTabSelection(mMainMenuOnResume);
+            mMainMenuOnResume = null;
+        }
+    }
+
+    private MainManager mMainManager = new MainManager();
+
+    private class MainManager {
+        private Fragment get(MainMenu menu) {
+            Fragment fragment = null;
+            switch (menu) {
+                case HomePage:
+                    break;
+                case Category:
+                    break;
+                case ShoppigCart:
+                    break;
+                case MinePage:
+                    break;
+            }
+            return fragment;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        handleResumeMenu();
     }
 
     private void initData() {

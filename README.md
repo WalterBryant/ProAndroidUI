@@ -1,4 +1,4 @@
-# android 进阶 UI #
+# android 进阶 UI #致力于做一个UI通APP
 读源码一定要有线索
 要带着自己的疑问来读源码
 

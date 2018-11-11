@@ -121,14 +121,4 @@ public class MainActivity extends BaseActivity {
     private void initData() {
 
     }
-
-    private void toFlowActivity() {
-        Intent intent = new Intent(this, FlowActivity.class);
-        startActivity(intent);
-    }
-
-    private void toMinionActivity() {
-        Intent intent = new Intent(this, MinionActivity.class);
-        startActivity(intent);
-    }
 }

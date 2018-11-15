@@ -15,4 +15,6 @@
     <color name="main_head_bg">#ffd600</color>
     <color name="main_head_text">#40454b</color>
 
+    <color name="transparent_ff000000">#ff000000</color>
+
 </resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/white" />
+            <corners
+                android:bottomLeftRadius="@dimen/dialog_corner"
+                android:bottomRightRadius="@dimen/dialog_corner"
+                android:topLeftRadius="@dimen/dialog_corner"
+                android:topRightRadius="@dimen/dialog_corner" />
+            <stroke android:width="@dimen/drawable_shape" android:color="@color/white"/>
+        </shape>
+    </item>
+    <item android:top="@dimen/drawable_shape" android:left="@dimen/drawable_shape" android:right="@dimen/drawable_shape" android:bottom="@dimen/drawable_shape">
+        <shape>
+            <solid android:color="@color/white"/>
+            <corners android:topLeftRadius="@dimen/dialog_corner"
+                android:topRightRadius="@dimen/dialog_corner"
+                android:bottomRightRadius="@dimen/dialog_corner"
+                android:bottomLeftRadius="@dimen/dialog_corner"/>
+            <stroke android:width="@dimen/drawable_shape" android:color="@color/white"/>
+        </shape>
+    </item>
+</layer-list>

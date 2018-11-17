@@ -8,14 +8,13 @@ import android.widget.Toast;
 import com.w.proandroid.ui.FlowLayout;
 
 public class FlowActivity extends AppCompatActivity {
-    private FlowLayout flowLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flow);
 
-        flowLayout = findViewById(R.id.flowlayout);
+        FlowLayout flowLayout = findViewById(R.id.flowlayout);
 
         flowLayout.setOnItemClickListener(new FlowLayout.OnItemClickListener() {
             @Override

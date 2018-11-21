@@ -43,7 +43,7 @@ public class NoticeDialogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        View view getActivity().getLayoutInflater().inflate(R.layout.notice_dialog_layout, null);
+        View view = getActivity().getLayoutInflater().inflate(R.layout.notice_dialog_layout, null);
         return super.onCreateDialog(savedInstanceState);
     }
 

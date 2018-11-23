@@ -15,16 +15,13 @@ import com.w.proandroid.MainApplication;
  */
 public class BaseActivity extends FragmentActivity implements View.OnClickListener {
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public void onClick(View v) {
-
     }
 
     @Override

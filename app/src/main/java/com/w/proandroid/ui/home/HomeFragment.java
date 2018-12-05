@@ -11,7 +11,7 @@ import com.w.proandroid.ui.BaseFragment;
 
 
 public class HomeFragment extends BaseFragment {
-
+    private final String TAG = HomeFragment.class.getSimpleName();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

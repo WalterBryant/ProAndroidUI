@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 
 import com.w.proandroid.common.utils.EnumDigest;
 import com.w.proandroid.ui.BaseActivity;
+import com.w.proandroid.ui.home.HomeFragment;
 import com.w.proandroid.ui.main.MainBottonView;
 
 public class MainActivity extends BaseActivity {
@@ -100,6 +101,7 @@ public class MainActivity extends BaseActivity {
             Fragment fragment = null;
             switch (menu) {
                 case HomePage:
+                    HomeFragment homeFragment = new HomeFragment();
                     break;
                 case Category:
                     break;

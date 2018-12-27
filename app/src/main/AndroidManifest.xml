@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".MinionActivity" />
         <activity android:name=".FlowActivity"/>
+
     </application>
 
 </manifest>
